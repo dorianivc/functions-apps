@@ -16,7 +16,7 @@ $body = "This HTTP triggered function executed successfully. Pass a name in the 
 
 if ($name) {
         
-    Invoke-WebRequest -UseBasicParsing https://72tgrow1b2.execute-api.us-east-1.amazonaws.com/Test1/addclient -ContentType "application/json" -Method GET -Body (@{"cedula" = $name;} | ConvertTo-Json)
+    Invoke-WebRequest -URI tps://72tgrow1b2.execute-api.us-east-1.amazonaws.com/Test1/addclient -ContentType "application/json" -Method GET -Body (@{"cedula" = $name;} | ConvertTo-Json)
     $body = "Hello, $name. This HTTP triggered function executed successfully."
 }
 

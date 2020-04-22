@@ -17,7 +17,7 @@ $body = "This HTTP triggered function executed successfully. Pass a name in the 
 if ($name) {
         
     Invoke-WebRequest -URI https://72tgrow1b2.execute-api.us-east-1.amazonaws.com/Test1/addclient -ContentType "application/json" -Method GET -Body (@{"cedula" = $name;} | ConvertTo-Json)
-    $body = "Hello, the ID $name were injected successfully into the database"
+    $body = "Hello, the ID $name were injected successfully into the table Banco.Cliente in database"
 }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
